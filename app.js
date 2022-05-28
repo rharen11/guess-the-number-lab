@@ -10,8 +10,9 @@ const game = {
         (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
         while(this.playerInput = true){
           return prevGuesses.push(getGuess())
-          if (this.playerInput = false) break
+          if (this.playerInput = this.secretNum) break
         }
+        render()
     },
     getGuess: function(){
       prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`)
@@ -21,5 +22,12 @@ const game = {
         if (this.playerInput <1) break
       }
     }
+    render: function({
+      if(this.playerInput === this.secretNum){
+        console.log(`Congrats! You guessed th number in ${prevGuesses.length}!`)
+      } else{
+        console.log(`Your guess is too [low][high]. Previous guesses: ${this.prevGuesses.join(', ')}`)
+      }
+    })
   }
 
