@@ -25,7 +25,7 @@ const game = {
       if(this.prevGuesses[this.prevGuesses.length -1] === this.secretNum){
         notice = (`Congrats! You guessed th number in ${this.prevGuesses.length}!`)
       } else{
-        notice = (`Your guess is not correct. Previous guesses: ${this.prevGuesses.join(', ')}`)
+        notice = (`Your guess is not correct. Your guess is too ${this.prevGuesses[this.prevGuesses.length -1] > this.secretNum ? "high" : "low"}. Previous guesses: ${this.prevGuesses.join(', ')}`)
       }
       alert(notice)
     }
