@@ -9,7 +9,7 @@ const game = {
         (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
         do{this.prevGuesses.push(this.getGuess());
           this.render();} while 
-          (this.prevGuesses[this.prevGuesses,length -1] !== this.secretNum);
+          (this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum);
           this.prevGuesses.push(this.getGuess())
     },
     getGuess: function(){
