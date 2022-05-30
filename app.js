@@ -4,30 +4,35 @@ const game = {
     smallestNum: 1,
     secretNum: null,
     prevGuesses: [],
-    playerInput: null,
     play: function() {
       this.secretNum = Math.floor(Math.random() * 
-        (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
-        while(this.playerInput = true){
-          return prevGuesses.push(getGuess())
-          if (this.playerInput = this.secretNum) break
-        }
-        render()
+        (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
+        do{this.prevGuesses.push(this.getGuess());
+          this.render();} while 
+          (this.prevGuesses[this.prevGuesses,length -1] !== this.secretNum);
     },
     getGuess: function(){
-      prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`)
-      while(playerInput <= 100){
-        this.playerInput = parseInt(this.playerInput)
-        return this.playerInput
-        if (this.playerInput <1) break
+      let guess = '';
+      while(typeof guess !== "number" || guess < this.smallestNum || guess > this.biggestNum){
+        guess = prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`)
       }
-    }
-    render: function({
-      if(this.playerInput === this.secretNum){
-        console.log(`Congrats! You guessed th number in ${prevGuesses.length}!`)
+      guess.push(this.prevGuesses[])
+      return guess;
+    },
+    render: function(){
+      let notice = ''
+      if(this.prevGuesses[this.prevGuesses.length -1] === this.secretNum){
+        notice = (`Congrats! You guessed th number in ${this.prevGuesses.length}!`)
       } else{
-        console.log(`Your guess is too [low][high]. Previous guesses: ${this.prevGuesses.join(', ')}`)
+        notice = (`Your guess is not correct. Previous guesses: ${this.prevGuesses.join(', ')}`)
       }
-    })
+      alert(notice)
+    }
   }
+
+game.play()
+game.getGuess()
+game.render()
+
+  
 
