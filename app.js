@@ -10,13 +10,14 @@ const game = {
         do{this.prevGuesses.push(this.getGuess());
           this.render();} while 
           (this.prevGuesses[this.prevGuesses,length -1] !== this.secretNum);
+          this.prevGuesses.push(this.getGuess())
     },
     getGuess: function(){
-      let guess = '';
-      while(typeof guess !== "number" || guess < this.smallestNum || guess > this.biggestNum){
-        guess = prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`)
+      let guess
+      while(!guess || guess < this.smallestNum || guess > this.biggestNum)
+      {
+        guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`))
       }
-      guess.push(this.prevGuesses[])
       return guess;
     },
     render: function(){
@@ -31,8 +32,6 @@ const game = {
   }
 
 game.play()
-game.getGuess()
-game.render()
 
   
 
